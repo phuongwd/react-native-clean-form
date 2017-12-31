@@ -1,42 +1,70 @@
 {
-  "name": "react-native-clean-form",
-  "version": "0.4.4",
+  "_from": "react-native-clean-form@^0.4.2",
+  "_id": "react-native-clean-form@0.4.2",
+  "_inBundle": false,
+  "_integrity": "sha1-LWGiHX0WR6uQjKbFy+3ZZhU085s=",
+  "_location": "/react-native-clean-form",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "react-native-clean-form@^0.4.2",
+    "name": "react-native-clean-form",
+    "escapedName": "react-native-clean-form",
+    "rawSpec": "^0.4.2",
+    "saveSpec": null,
+    "fetchSpec": "^0.4.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-clean-form/-/react-native-clean-form-0.4.2.tgz",
+  "_shasum": "2d61a21d7d1647ab908ca6c5cbedd9661534f39b",
+  "_spec": "react-native-clean-form@^0.4.2",
+  "_where": "/Works/GoodwillSmartsafe",
+  "author": {
+    "name": "Esben Petersen",
+    "email": "esbenspetersen@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/esbenp/react-native-clean-form/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "react-native-vector-icons": ">=4.0.0",
+    "styled-components": ">=1.4"
+  },
+  "deprecated": false,
   "description": "An example of creating mobile forms with React Native, styled-components and redux-form",
-  "main": "index.js",
+  "devDependencies": {
+    "react-native": "~0.40.0"
+  },
   "directories": {
     "example": "example"
   },
-  "scripts": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/esbenp/react-native-clean-form.git"
-  },
+  "files": [
+    "src",
+    "redux-form.js",
+    "redux-form-immutable.js"
+  ],
+  "homepage": "https://github.com/esbenp/react-native-clean-form#readme",
   "keywords": [
     "react-native",
     "redux-form",
     "immutable.js",
     "styled-components"
   ],
-  "author": "Esben Petersen <esbenspetersen@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/esbenp/react-native-clean-form/issues"
-  },
-  "homepage": "https://github.com/esbenp/react-native-clean-form#readme",
-  "files": [
-    "src",
-    "redux-form.js",
-    "redux-form-immutable.js"
-  ],
-  "devDependencies": {
-    "react-native": "~0.40.0"
-  },
+  "main": "index.js",
+  "name": "react-native-clean-form",
   "peerDependencies": {
     "react-native": "*"
   },
-  "dependencies": {
-    "styled-components": ">=1.4",
-    "react-native-vector-icons": ">=4.0.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esbenp/react-native-clean-form.git"
+  },
+  "scripts": {},
+  "version": "0.4.2"
 }
