@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, Label } from '../../index'
 import styled from 'styled-components/native'
 import defaultTheme from '../Theme'
+import de from '../../../../src/i18n/languages/de';
 
 const ErrorMessage = styled.Text`
   color: ${props => props.theme.ErrorMessage.color};
@@ -17,12 +18,11 @@ ErrorMessage.defaultProps = {
 }
 
 const render = renderComponent => props => {
-  const { border, input : { onChange, ...restInput }, label, inlineLabel, theme, meta: { touched, error } } = props
+  const { border, input : { onChange, ...restInput }, label, theme, meta: { touched, error } } = props
 
   return (
     <View>
-      <FormGroup border={border} inlineLabel={inlineLabel} theme={theme} error={touched && !!error} {...props} >
-        <Label theme={theme}>{ label }</Label>
+      <FormGroup border={border} theme={theme} error={touched && !!error} {...props} >
         { renderComponent(props) }
       </FormGroup>
       { touched && error && <ErrorMessage theme={theme}>{ error }</ErrorMessage> }
@@ -44,13 +44,11 @@ const createInputCreator = ReduxFormFieldComponent => (name, renderFunction, Pro
   FieldWrapper.displayName = 'FieldWrapper'
   FieldWrapper.PropTypes = Object.assign({
     border: PropTypes.bool,
-    inlineLabel: PropTypes.bool,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
   }, PropTypesOverrides)
   FieldWrapper.defaultProps = Object.assign({
-    border: FormGroup.defaultProps.border,
-    inlineLabel: FormGroup.defaultProps.inlineLabel
+    border: FormGroup.defaultProps.border
   }, defaultProps)
 
   return FieldWrapper

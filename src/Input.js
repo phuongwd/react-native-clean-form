@@ -5,7 +5,7 @@ import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
 /**
- * Calculates the flex value based on the inlineLabel and numberOfLines
+ * Calculates the flex value based on the numberOfLines
  * properties.
  *
  * @param {Object} props
@@ -16,10 +16,6 @@ const calculateFlexValue = (props) => {
 
   if (props.multiline && props.numberOfLines > 0) {
     flex = props.numberOfLines + 1
-  }
-
-  if (props.inlineLabel) {
-    flex = 0.5
   }
 
   return (flex)
@@ -54,7 +50,7 @@ InputWrapper.defaultProps = {
 
 // Subtract the border of the form group to have a full height input
 const StyledInput = styled.TextInput`
-  flex: ${props => props.inlineLabel ? .5 : 1};
+  flex: 1;
   color: ${props => props.theme.Input.color};
   font-size: ${props => props.theme.BaseInput.fontSize};
   line-height: ${props => props.theme.BaseInput.lineHeight};
@@ -69,11 +65,9 @@ class Input extends React.Component {
   render() {
     return (
       <InputWrapper
-        inlineLabel={this.props.inlineLabel}
         multiline={this.props.multiline}
         numberOfLines={this.props.numberOfLines}>
         <StyledInput
-          inlineLabel={this.props.inlineLabel}
           placeholderTextColor={this.props.theme.BaseInput.placeholderColor}
           {...this.props}/>
       </InputWrapper>
@@ -82,13 +76,11 @@ class Input extends React.Component {
 }
 
 Input.PropTypes = {
-  ...TextInput.propTypes,
-  inlineLabel: PropTypes.bool.isRequired
+  ...TextInput.propTypes
 }
 
 Input.defaultProps = {
   componentName: 'Input',
-  inlineLabel: true,
   theme: defaultTheme
 }
 

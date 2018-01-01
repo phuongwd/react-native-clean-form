@@ -21,9 +21,7 @@ const FieldsetWrapper = styled.View`
   borderBottomColor: ${props => props.theme.Fieldset.borderBottomColor };
   borderBottomWidth: ${props => props.last ? 0 : props.theme.Fieldset.borderBottomWidth };
   paddingTop : ${props => props.theme.Fieldset.paddingTop };
-  paddingRight : ${props => props.theme.Fieldset.paddingRight };
   paddingBottom : ${props => props.theme.Fieldset.paddingBottom };
-  paddingLeft : ${props => props.theme.Fieldset.paddingLeft };
 `
 
 FieldsetWrapper.defaultProps = {

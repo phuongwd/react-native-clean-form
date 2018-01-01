@@ -24,7 +24,7 @@ class Form extends Component {
     const { children, ...rest } = this.props
 
     return (
-      <View style={{ flex: 1 }} onLayout={this.onLayout}>
+      <View style={{ flex: 1 }} onLayout={this.onLayout} {...rest}>
         <ScrollView contentContainerStyle={{ minHeight: this.state.height }}>
             { children }
         </ScrollView>

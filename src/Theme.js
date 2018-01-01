@@ -31,7 +31,7 @@ const Theme = {
     borderWidth: 1,
     errorBorderColor: 'red',
     height: 35,
-    marginBottom: 10,
+    marginBottom: 0,
     paddingTop: 0,
     paddingBottom: 0,
     paddingLeft: 10,

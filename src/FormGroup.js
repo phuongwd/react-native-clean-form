@@ -19,20 +19,16 @@ const calculateHeight = (props) => {
     height = props.theme.FormGroup.height * props.numberOfLines
   }
 
-  if (!props.inlineLabel) {
-    height += props.theme.Label.stackedHeight
-  }
-
   return (height)
 }
 
 const FormGroupWrapper = styled.View`
-  align-items: ${props => props.inlineLabel ? 'center' : 'stretch' };
+  align-items: stretch;
   border-color: ${props => props.error ? props.theme.FormGroup.errorBorderColor : props.theme.FormGroup.borderColor};
   border-radius: ${props => props.theme.FormGroup.borderRadius};
   border-style: ${props => props.theme.FormGroup.borderStyle};
   border-width: ${props => props.border ? props.theme.FormGroup.borderWidth : 0};
-  flex-direction: ${props => props.inlineLabel ? 'row' : 'column' };
+  flex-direction: column;
   justify-content: flex-start;
   height: ${props => calculateHeight(props)};
   marginBottom: ${props => props.theme.FormGroup.marginBottom};
@@ -56,13 +52,12 @@ const FormGroup = props => {
       subsetOfProps = _.pick(props, inputPropTypes);
     }
 
-    return React.cloneElement(child, Object.assign({}, child.props, {
-      inlineLabel, theme, ...subsetOfProps
+    return React.cloneElement(child, Object.assign({}, child.props, {theme, ...subsetOfProps
     }))
   })
 
   return (
-    <FormGroupWrapper border={border} error={error} inlineLabel={inlineLabel}
+    <FormGroupWrapper border={border} error={error}
       multiline={multiline} numberOfLines={numberOfLines} theme={theme}>
       { children }
     </FormGroupWrapper>
@@ -78,7 +73,6 @@ FormGroup.defaultProps = {
   componentName: 'FormGroup',
   border: true,
   error: false,
-  inlineLabel: true,
   numberOfLines: 1,
   multiline: false
 }
