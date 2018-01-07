@@ -10,7 +10,7 @@ const Theme = {
     color: 'red',
     fontSize: 10,
     marginBottom: 15,
-    textAlign: 'right'
+    textAlign: 'left'
   },
   Fieldset: {
     borderBottomWidth: 1,
