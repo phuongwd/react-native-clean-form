@@ -9,7 +9,6 @@ const Theme = {
   ErrorMessage: {
     color: 'red',
     fontSize: 10,
-    marginBottom: 5,
     textAlign: 'left'
   },
   Fieldset: {
